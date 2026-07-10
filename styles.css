@@ -37,6 +37,7 @@ button {
 }
 
 .folder-stage {
+  --tab-width: clamp(150px, 15.5vw, 204px);
   position: relative;
   width: min(1180px, 100%);
   min-height: min(760px, calc(100vh - 48px));
@@ -85,39 +86,60 @@ button {
 }
 
 .folder-tab-shadow {
-  right: 17%;
-  width: min(250px, 28vw);
+  --active-left: calc(50% - (var(--tab-width) * 2.5));
+  left: var(--active-left);
+  width: var(--tab-width);
   background: var(--espresso);
   transform: translateY(16px);
 }
 
+.folder-stage:has(.folder-tab-button:nth-child(1).is-active) .folder-tab-shadow {
+  --active-left: calc(50% - (var(--tab-width) * 2.5));
+}
+
+.folder-stage:has(.folder-tab-button:nth-child(2).is-active) .folder-tab-shadow {
+  --active-left: calc(50% - (var(--tab-width) * 1.5));
+}
+
+.folder-stage:has(.folder-tab-button:nth-child(3).is-active) .folder-tab-shadow {
+  --active-left: calc(50% - (var(--tab-width) * 0.5));
+}
+
+.folder-stage:has(.folder-tab-button:nth-child(4).is-active) .folder-tab-shadow {
+  --active-left: calc(50% + (var(--tab-width) * 0.5));
+}
+
+.folder-stage:has(.folder-tab-button:nth-child(5).is-active) .folder-tab-shadow {
+  --active-left: calc(50% + (var(--tab-width) * 1.5));
+}
+
 .folder-tabs {
   position: absolute;
-  top: clamp(54px, 6.2vw, 76px);
-  left: clamp(250px, 28vw, 430px);
-  right: clamp(42px, 5vw, 80px);
+  top: clamp(80px, 8vw, 100px);
+  left: 50%;
   z-index: 12;
-  max-width: none;
+  width: calc(var(--tab-width) * 5);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0;
   flex-wrap: nowrap;
   margin-bottom: 0;
+  transform: translateX(-50%);
 }
 
 .folder-tab-button {
   position: relative;
-  min-width: clamp(120px, 13vw, 176px);
-  min-height: 62px;
-  margin-left: -18px;
-  border: 1px solid rgba(255, 250, 242, 0.22);
+  flex: 0 0 var(--tab-width);
+  min-height: 72px;
+  margin-left: 0;
+  border: 1px solid var(--line);
   border-bottom: 0;
   border-radius: 26px 26px 0 0;
-  color: #fffaf2;
-  background: var(--espresso);
+  color: var(--ink);
+  background: #f0dfc8;
   box-shadow:
-    -8px 0 18px rgba(52, 22, 7, 0.12),
-    inset 0 2px 0 rgba(255, 255, 255, 0.16);
+    -8px 0 18px rgba(52, 22, 7, 0.08),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, z-index 180ms ease;
 }
@@ -151,16 +173,19 @@ button {
   z-index: 13;
   transform: translateY(-6px);
   outline: none;
-  color: var(--ink);
   background: #fffaf2;
 }
 
 .folder-tab-button.is-active {
   z-index: 14;
-  transform: translateY(-10px);
-  color: var(--ink);
-  background: #f0dfc8;
-  border-color: var(--line);
+  height: 105px;
+  min-height: 105px;
+  color: #fffaf2;
+  background: var(--espresso);
+  border-color: rgba(255, 250, 242, 0.22);
+  border-radius: 30px 30px 0 0;
+  transform: translateY(-32px);
+  box-shadow: none;
 }
 
 .file-stack {
@@ -397,6 +422,7 @@ h1 {
   }
 
   .folder-stage {
+    --tab-width: 118px;
     min-height: calc(100vh - 24px);
     padding: 82px 14px 24px;
   }
@@ -410,18 +436,25 @@ h1 {
   }
 
   .folder-tabs {
-    top: 62px;
+    top: 82px;
     left: 18px;
     right: 18px;
-    max-width: calc(100% - 36px);
-    overflow-x: auto;
+    width: auto;
     justify-content: flex-start;
+    overflow-x: auto;
+    transform: none;
     padding-top: 10px;
   }
 
   .folder-tab-button {
-    min-width: 118px;
+    flex: 0 0 var(--tab-width);
     min-height: 54px;
+  }
+
+  .folder-tab-button.is-active {
+    height: auto;
+    min-height: 54px;
+    transform: translateY(-8px);
   }
 
   .active-paper {
