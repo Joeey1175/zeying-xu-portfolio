@@ -290,6 +290,7 @@ h1 {
 .active-paper.is-home .home-lower-panel {
   position: relative;
   display: block;
+  overflow: visible;
   min-height: clamp(330px, 42vw, 560px);
   margin:
     clamp(126px, 14vw, 184px)
@@ -302,14 +303,29 @@ h1 {
 }
 
 .active-paper.is-home .home-lower-panel::before {
-  content: none;
+  content: "";
+  position: absolute;
+  inset: clamp(-112px, -8vw, -74px) 0 0;
+  z-index: 1;
+  border-radius: 30px 30px 0 0;
+  background: var(--paper);
+  box-shadow: 0 -16px 34px rgba(52, 22, 7, 0.08);
+  opacity: 0;
+  transform: translateY(72px);
+  transition: opacity 220ms ease, transform 260ms ease;
+  pointer-events: none;
+}
+
+.active-paper.is-home .home-lower-panel.is-open::before {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-subtabs {
   position: absolute;
   left: clamp(20px, 5vw, 56px);
   top: -58px;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   align-items: flex-end;
   gap: 0;
@@ -341,11 +357,30 @@ h1 {
 
 .home-detail {
   display: none;
+  position: relative;
+  z-index: 3;
   padding: clamp(42px, 5vw, 72px) clamp(42px, 6vw, 84px);
+  opacity: 0;
+  transform: translateY(22px);
 }
 
 .home-detail.is-active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: homePageRise 280ms ease both;
+}
+
+@keyframes homePageRise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-detail-heading {
