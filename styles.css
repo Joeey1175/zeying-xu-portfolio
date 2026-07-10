@@ -93,11 +93,11 @@ button {
 
 .folder-tabs {
   position: absolute;
-  top: clamp(78px, 9vw, 108px);
-  left: clamp(48px, 7vw, 92px);
-  right: clamp(48px, 7vw, 92px);
-  z-index: 6;
-  max-width: 100%;
+  top: clamp(64px, 7vw, 92px);
+  left: auto;
+  right: clamp(74px, 10vw, 150px);
+  z-index: 9;
+  max-width: min(760px, calc(100% - 96px));
   display: flex;
   justify-content: flex-end;
   gap: 0;
@@ -107,17 +107,17 @@ button {
 
 .folder-tab-button {
   position: relative;
-  min-width: clamp(120px, 13vw, 166px);
-  min-height: 62px;
+  min-width: clamp(112px, 11vw, 154px);
+  min-height: 58px;
   margin-left: -18px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 250, 242, 0.22);
   border-bottom: 0;
   border-radius: 26px 26px 0 0;
-  color: var(--ink);
-  background: #f0dfc8;
+  color: #fffaf2;
+  background: var(--espresso);
   box-shadow:
-    -8px 0 18px rgba(52, 22, 7, 0.08),
-    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+    -8px 0 18px rgba(52, 22, 7, 0.12),
+    inset 0 2px 0 rgba(255, 255, 255, 0.16);
   cursor: pointer;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, z-index 180ms ease;
 }
@@ -151,14 +151,16 @@ button {
   z-index: 7;
   transform: translateY(-8px);
   outline: none;
+  color: var(--ink);
   background: #fffaf2;
 }
 
 .folder-tab-button.is-active {
   z-index: 8;
   transform: translateY(-12px);
-  color: #fffaf2;
-  background: var(--espresso);
+  color: var(--ink);
+  background: #f0dfc8;
+  border-color: var(--line);
 }
 
 .file-stack {
@@ -408,21 +410,18 @@ h1 {
   }
 
   .folder-tabs {
-    top: 96px;
-    left: 26px;
-    right: 26px;
-    width: auto;
-    justify-content: flex-start;
+    top: 76px;
+    left: 22px;
+    right: 22px;
+    max-width: calc(100% - 44px);
     overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 4px;
+    justify-content: flex-start;
+    padding-top: 12px;
   }
 
   .folder-tab-button {
-    min-width: 104px;
-    min-height: 52px;
-    margin-left: -12px;
-    flex: 0 0 auto;
+    min-width: 118px;
+    min-height: 54px;
   }
 
   .active-paper {
