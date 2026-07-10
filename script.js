@@ -9,7 +9,7 @@ const sections = [
     cardTitle: "Meet Zeying Xu",
     cardCopy:
       "3+ years of marketing analytics experience, performance analysis, creative tools, and data storytelling.",
-    image: "assets/pdf-pages/page-001.png",
+    image: "page-001.png",
     alt: "Preview of the portfolio cover page",
     actions: [],
   },
@@ -23,7 +23,7 @@ const sections = [
     cardTitle: "Competitive Benchmarking",
     cardCopy:
       "Benchmarked six academic publishers across Q1 2025 content analysis and comparative visualizations.",
-    image: "assets/pdf-pages/page-005.png",
+    image: "page-005.png",
     alt: "Preview of the competitive benchmarking overview page",
     actions: [],
   },
@@ -37,7 +37,7 @@ const sections = [
     cardTitle: "Interactive Dashboard",
     cardCopy:
       "Built a Tableau dashboard to monitor genre performance, investment efficiency, revenue trends, and KPI summaries.",
-    image: "assets/pdf-pages/page-012.png",
+    image: "page-012.png",
     alt: "Preview of the interactive dashboard page",
     actions: [
       {
@@ -56,7 +56,7 @@ const sections = [
     cardTitle: "Selected Video Works",
     cardCopy:
       "Edited research, academic training, and scientific webinar videos with synchronized graphics and subtitles.",
-    image: "assets/pdf-pages/page-015.png",
+    image: "page-015.png",
     alt: "Preview of the selected video works page",
     actions: [],
   },
@@ -70,7 +70,7 @@ const sections = [
     cardTitle: "Project Results",
     cardCopy:
       "Delivered monthly reports, benchmarked publishers, created videos, and supported long-term publishing decisions.",
-    image: "assets/pdf-pages/page-017.png",
+    image: "page-017.png",
     alt: "Preview of the portfolio contact page",
     actions: [
       {
