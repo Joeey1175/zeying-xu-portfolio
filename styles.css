@@ -91,6 +91,7 @@ button {
   width: var(--tab-width);
   background: var(--espresso);
   transform: translateY(16px);
+  display: none;
 }
 
 .folder-stage:has(.folder-tab-button:nth-child(1).is-active) .folder-tab-shadow {
@@ -115,7 +116,7 @@ button {
 
 .folder-tabs {
   position: absolute;
-  top: clamp(92px, 8.8vw, 118px);
+  top: clamp(64px, 6.4vw, 84px);
   left: 50%;
   z-index: 12;
   width: calc(var(--tab-width) * 5);
@@ -130,7 +131,7 @@ button {
 .folder-tab-button {
   position: relative;
   flex: 0 0 var(--tab-width);
-  min-height: 58px;
+  min-height: 54px;
   margin-left: 0;
   border: 1px solid var(--line);
   border-bottom: 0;
@@ -178,13 +179,13 @@ button {
 
 .folder-tab-button.is-active {
   z-index: 14;
-  height: 105px;
-  min-height: 105px;
+  height: 86px;
+  min-height: 86px;
   color: #fffaf2;
-  background: transparent;
-  border-color: transparent;
+  background: var(--espresso);
+  border-color: rgba(255, 250, 242, 0.22);
   border-radius: 30px 30px 0 0;
-  transform: translateY(calc(-1 * clamp(104px, 8.6vw, 128px)));
+  transform: translateY(-34px);
   box-shadow: none;
 }
 
@@ -436,7 +437,7 @@ h1 {
   }
 
   .folder-tabs {
-    top: 82px;
+    top: 62px;
     left: 18px;
     right: 18px;
     width: auto;
@@ -452,11 +453,11 @@ h1 {
   }
 
   .folder-tab-button.is-active {
-    height: auto;
-    min-height: 48px;
-    background: transparent;
-    border-color: transparent;
-    transform: translateY(-34px);
+    height: 62px;
+    min-height: 62px;
+    background: var(--espresso);
+    border-color: rgba(255, 250, 242, 0.22);
+    transform: translateY(-18px);
   }
 
   .active-paper {
