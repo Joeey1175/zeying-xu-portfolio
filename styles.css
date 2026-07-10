@@ -560,6 +560,172 @@ h1 {
   text-align: center;
 }
 
+@media (min-width: 781px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .portfolio-shell {
+    height: 100vh;
+    min-height: 0;
+    padding: clamp(8px, 1.4vw, 18px);
+  }
+
+  .folder-stage {
+    height: calc(100vh - clamp(16px, 2.8vw, 36px));
+    min-height: 0;
+    max-height: 760px;
+    grid-template-rows: 1fr auto;
+    padding: clamp(70px, 7.2vw, 92px) clamp(18px, 4vw, 58px) clamp(16px, 2.2vw, 26px);
+  }
+
+  .folder-back {
+    top: 22px;
+    height: 73%;
+  }
+
+  .folder-front {
+    bottom: 14px;
+    height: 34%;
+  }
+
+  .folder-tabs {
+    top: calc(clamp(70px, 7.2vw, 92px) - 76px);
+  }
+
+  .file-stack {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .paper-shadow {
+    display: none;
+  }
+
+  .active-paper {
+    padding: clamp(22px, 3.4vw, 42px);
+    outline: none;
+  }
+
+  .active-paper:focus {
+    outline: none;
+  }
+
+  .active-paper.is-home {
+    overflow: visible;
+  }
+
+  .paper-clip {
+    top: clamp(20px, 3vw, 32px);
+    right: clamp(18px, 3.2vw, 42px);
+    width: 36px;
+    height: 92px;
+    border-width: 6px;
+  }
+
+  .script-label {
+    font-size: clamp(1.55rem, 3vw, 3.45rem);
+  }
+
+  h1 {
+    font-size: clamp(3rem, 7.2vw, 6.8rem);
+  }
+
+  .section-copy {
+    max-width: 720px;
+    margin-top: clamp(12px, 1.8vw, 22px);
+    font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+    line-height: 1.4;
+  }
+
+  .active-paper.is-home .home-lower-panel {
+    min-height: clamp(190px, 25vw, 315px);
+    margin:
+      clamp(42px, 4.8vw, 58px)
+      calc(-1 * clamp(22px, 3.4vw, 42px))
+      calc(-1 * clamp(22px, 3.4vw, 42px));
+  }
+
+  .home-subtabs {
+    top: -50px;
+  }
+
+  .home-subtab {
+    min-width: clamp(110px, 11vw, 150px);
+    min-height: 50px;
+    padding: 0 20px;
+    font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  }
+
+  .home-subtab.is-active {
+    min-height: 58px;
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  }
+
+  .home-detail {
+    padding: clamp(24px, 3vw, 38px) clamp(28px, 4vw, 54px);
+  }
+
+  .home-detail-heading {
+    gap: clamp(14px, 2.4vw, 28px);
+    margin-bottom: clamp(18px, 2.4vw, 30px);
+  }
+
+  .home-detail-heading strong {
+    font-size: clamp(2rem, 3.8vw, 3.4rem);
+  }
+
+  .home-detail-heading span {
+    font-size: clamp(2.2rem, 4.4vw, 3.9rem);
+  }
+
+  .home-detail-grid {
+    grid-template-columns: minmax(260px, 1fr) minmax(210px, 0.42fr);
+    gap: clamp(24px, 4vw, 44px);
+  }
+
+  .home-highlight-list {
+    gap: 12px;
+  }
+
+  .home-highlight-list p,
+  .home-skill-grid p {
+    min-height: 52px;
+    padding: 12px 18px;
+    font-size: clamp(0.95rem, 1.45vw, 1.18rem);
+  }
+
+  .home-profile-card {
+    min-height: 210px;
+  }
+
+  .home-skill-grid {
+    gap: 12px;
+  }
+
+  .controls {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .folder-stage:has(.active-paper.is-home) .controls {
+    display: none;
+  }
+
+  .icon-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-button span {
+    font-size: 1.9rem;
+  }
+}
+
 @media (max-width: 780px) {
   .portfolio-shell {
     padding: 12px;
