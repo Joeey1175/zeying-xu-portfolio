@@ -62,12 +62,7 @@ const sections = [
       "Edited research, academic training, and scientific webinar videos with synchronized graphics and subtitles.",
     image: "/assets/pdf-pages/page-015.png",
     alt: "Preview of the selected video works page",
-    actions: [
-      {
-        label: "Video previews only - unpublished work",
-        note: true,
-      },
-    ],
+    actions: [],
   },
   {
     tab: "Contact",
