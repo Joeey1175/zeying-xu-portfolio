@@ -93,11 +93,11 @@ button {
 
 .folder-tabs {
   position: absolute;
-  top: clamp(64px, 7vw, 92px);
-  left: auto;
-  right: clamp(74px, 10vw, 150px);
-  z-index: 9;
-  max-width: min(760px, calc(100% - 96px));
+  top: clamp(54px, 6.2vw, 76px);
+  left: clamp(250px, 28vw, 430px);
+  right: clamp(42px, 5vw, 80px);
+  z-index: 12;
+  max-width: none;
   display: flex;
   justify-content: flex-end;
   gap: 0;
@@ -107,8 +107,8 @@ button {
 
 .folder-tab-button {
   position: relative;
-  min-width: clamp(112px, 11vw, 154px);
-  min-height: 58px;
+  min-width: clamp(120px, 13vw, 176px);
+  min-height: 62px;
   margin-left: -18px;
   border: 1px solid rgba(255, 250, 242, 0.22);
   border-bottom: 0;
@@ -148,16 +148,16 @@ button {
 
 .folder-tab-button:hover,
 .folder-tab-button:focus-visible {
-  z-index: 7;
-  transform: translateY(-8px);
+  z-index: 13;
+  transform: translateY(-6px);
   outline: none;
   color: var(--ink);
   background: #fffaf2;
 }
 
 .folder-tab-button.is-active {
-  z-index: 8;
-  transform: translateY(-12px);
+  z-index: 14;
+  transform: translateY(-10px);
   color: var(--ink);
   background: #f0dfc8;
   border-color: var(--line);
@@ -410,13 +410,13 @@ h1 {
   }
 
   .folder-tabs {
-    top: 76px;
-    left: 22px;
-    right: 22px;
-    max-width: calc(100% - 44px);
+    top: 62px;
+    left: 18px;
+    right: 18px;
+    max-width: calc(100% - 36px);
     overflow-x: auto;
     justify-content: flex-start;
-    padding-top: 12px;
+    padding-top: 10px;
   }
 
   .folder-tab-button {
