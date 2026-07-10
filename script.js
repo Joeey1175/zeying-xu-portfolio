@@ -116,6 +116,8 @@ function renderSection(nextSection) {
     fields.cardCopy.textContent = section.cardCopy;
     fields.image.src = section.image;
     fields.image.alt = section.alt;
+    activePaper.dataset.sectionName = section.tab.toLowerCase();
+    activePaper.classList.toggle("is-home", currentSection === 0);
     fields.actions.replaceChildren(
       ...section.actions.map((action) => {
         if (action.note) {
