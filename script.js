@@ -86,6 +86,8 @@ const tabButtons = [...document.querySelectorAll(".folder-tab-button")];
 const prevButton = document.querySelector("#prev-section");
 const nextButton = document.querySelector("#next-section");
 const pageIndicator = document.querySelector("#page-indicator");
+const homeSubtabs = [...document.querySelectorAll(".home-subtab")];
+const homeDetails = [...document.querySelectorAll(".home-detail")];
 const fields = {
   kicker: document.querySelector("#section-kicker"),
   title: document.querySelector("#section-title"),
@@ -99,6 +101,18 @@ const fields = {
 
 let currentSection = 0;
 let touchStartX = 0;
+
+function renderHomePanel(panelName) {
+  homeSubtabs.forEach((button) => {
+    const isActive = button.dataset.homePanel === panelName;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-current", isActive ? "page" : "false");
+  });
+
+  homeDetails.forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.homeDetail === panelName);
+  });
+}
 
 function renderSection(nextSection) {
   const normalized = (nextSection + sections.length) % sections.length;
@@ -156,6 +170,12 @@ tabButtons.forEach((button) => {
   });
 });
 
+homeSubtabs.forEach((button) => {
+  button.addEventListener("click", () => {
+    renderHomePanel(button.dataset.homePanel);
+  });
+});
+
 prevButton.addEventListener("click", () => renderSection(currentSection - 1));
 nextButton.addEventListener("click", () => renderSection(currentSection + 1));
 
@@ -180,3 +200,4 @@ activePaper.addEventListener("touchend", (event) => {
 });
 
 renderSection(0);
+renderHomePanel("introduction");
