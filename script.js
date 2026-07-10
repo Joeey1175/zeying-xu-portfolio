@@ -86,6 +86,7 @@ const tabButtons = [...document.querySelectorAll(".folder-tab-button")];
 const prevButton = document.querySelector("#prev-section");
 const nextButton = document.querySelector("#next-section");
 const pageIndicator = document.querySelector("#page-indicator");
+const homeLowerPanel = document.querySelector("#home-lower-panel");
 const homeSubtabs = [...document.querySelectorAll(".home-subtab")];
 const homeDetails = [...document.querySelectorAll(".home-detail")];
 const fields = {
@@ -103,6 +104,10 @@ let currentSection = 0;
 let touchStartX = 0;
 
 function renderHomePanel(panelName) {
+  const hasActivePanel = Boolean(panelName);
+
+  homeLowerPanel.classList.toggle("is-open", hasActivePanel);
+
   homeSubtabs.forEach((button) => {
     const isActive = button.dataset.homePanel === panelName;
     button.classList.toggle("is-active", isActive);
@@ -122,6 +127,8 @@ function renderSection(nextSection) {
   activePaper.classList.add("is-turning");
 
   window.setTimeout(() => {
+    renderHomePanel(null);
+
     fields.kicker.textContent = section.kicker;
     fields.title.textContent = section.title;
     fields.copy.textContent = section.copy;
@@ -200,4 +207,4 @@ activePaper.addEventListener("touchend", (event) => {
 });
 
 renderSection(0);
-renderHomePanel("introduction");
+renderHomePanel(null);
