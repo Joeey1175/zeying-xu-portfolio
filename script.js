@@ -1,6 +1,6 @@
 const sections = [
   {
-    tab: "Profile",
+    tab: "Home",
     kicker: "Marketing & Business Analytics",
     title: "Portfolio",
     copy:
